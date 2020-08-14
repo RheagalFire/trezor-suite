@@ -64,6 +64,10 @@ export type UserContextPayload =
       }
     | {
           type: 'disconnect-device';
+      }
+    | {
+          type: 'advanced-coin-settings';
+          coin: Account['symbol'];
       };
 
 export type ModalActions =

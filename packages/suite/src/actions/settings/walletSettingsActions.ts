@@ -2,6 +2,7 @@ import { Dispatch, GetState } from '@suite-types';
 import { WALLET_SETTINGS } from './constants';
 import * as suiteActions from '@suite-actions/suiteActions';
 import { Network, ExternalNetwork } from '@wallet-types';
+import { BlockbookUrl } from '@wallet-types/blockbook';
 
 export type WalletSettingsActions =
     | { type: typeof WALLET_SETTINGS.CHANGE_NETWORKS; payload: Network['symbol'][] }
@@ -10,7 +11,9 @@ export type WalletSettingsActions =
           payload: ExternalNetwork['symbol'][];
       }
     | { type: typeof WALLET_SETTINGS.SET_LOCAL_CURRENCY; localCurrency: string }
-    | { type: typeof WALLET_SETTINGS.SET_HIDE_BALANCE; toggled: boolean };
+    | { type: typeof WALLET_SETTINGS.SET_HIDE_BALANCE; toggled: boolean }
+    | { type: typeof WALLET_SETTINGS.ADD_BLOCKBOOK_URL; payload: BlockbookUrl }
+    | { type: typeof WALLET_SETTINGS.REMOVE_BLOCKBOOK_URL; payload: BlockbookUrl }
 
 export const setLocalCurrency = (localCurrency: string) => ({
     type: WALLET_SETTINGS.SET_LOCAL_CURRENCY,
@@ -47,5 +50,15 @@ export const changeCoinVisibility = (symbol: Network['symbol'], shouldBeVisible:
 
 export const changeNetworks = (payload: Network['symbol'][]) => ({
     type: WALLET_SETTINGS.CHANGE_NETWORKS,
+    payload,
+});
+
+export const addBlockbookUrl = (payload: BlockbookUrl) => ({
+    type: WALLET_SETTINGS.ADD_BLOCKBOOK_URL,
+    payload,
+});
+
+export const removeBlockbookUrl = (payload: BlockbookUrl) => ({
+    type: WALLET_SETTINGS.REMOVE_BLOCKBOOK_URL,
     payload,
 });

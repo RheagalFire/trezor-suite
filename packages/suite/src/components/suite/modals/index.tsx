@@ -31,6 +31,7 @@ import TransactionDetail from './TransactionDetail';
 import Log from './Log';
 import WipeDevice from './WipeDevice';
 import DisconnectDevice from './DisconnectDevice';
+import AdvancedCoinSettings from './AdvancedCoinSettings/Container';
 
 const mapStateToProps = (state: AppState) => ({
     modal: state.modal,
@@ -168,6 +169,8 @@ const getUserContextModal = (props: Props) => {
             return <DisconnectDevice />;
         case 'log':
             return <Log onCancel={modalActions.onCancel} />;
+        case 'advanced-coin-settings':
+            return <AdvancedCoinSettings {...payload} onCancel={modalActions.onCancel} />;
         default:
             return null;
     }
