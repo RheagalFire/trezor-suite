@@ -3531,6 +3531,23 @@ const definedMessages = defineMessages({
         id: 'TR_TO_ADD_NEW_ACCOUNT_WAIT_FOR_DISCOVERY',
         defaultMessage: 'Wait for discovery process to complete before adding a new account.',
     },
+    SETTINGS_ADV_COIN_MODAL_TITLE: {
+        id: 'SETTINGS_ADV_COIN_MODAL_TITLE',
+        defaultMessage: '{name} ({coin}) advanced settings',
+    },
+    SETTINGS_ADV_COIN_MODAL_DESCRIPTION: {
+        id: 'SETTINGS_ADV_COIN_MODAL_DESCRIPTION',
+        defaultMessage: 'Expert-only settings that can possibly break some functionality.',
+    },
+    SETTINGS_ADV_COIN_BLOCKBOOK_TITLE: {
+        id: 'SETTINGS_ADV_COIN_BLOCKBOOK_TITLE',
+        defaultMessage: 'Blockbook URL',
+    },
+    SETTINGS_ADV_COIN_BLOCKBOOK_DESCRIPTION: {
+        id: 'SETTINGS_ADV_COIN_BLOCKBOOK_DESCRIPTION',
+        defaultMessage:
+            'Coins settings also defines the Discovery process when Trezor is connected, Each time you connect not remembered device.{newLine}Default: {urls}',
+    },
 } as const);
 
 export default definedMessages;
